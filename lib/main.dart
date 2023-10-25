@@ -37,79 +37,84 @@ class _LogInState extends State<LogIn> {
       ),
       body: Builder(
         builder: (context) {
-          return SingleChildScrollView(
-            child: Column(
-              children: [
-                const Padding(padding: EdgeInsets.only(top: 50)),
-                const Center(
-                  child: Image(
-                    image: AssetImage('assets/chef.gif'),
-                    width: 170.0,
-                    height: 190.0,
+          return GestureDetector(
+            onTap: (){
+              FocusScope.of(context).unfocus();
+            },
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  const Padding(padding: EdgeInsets.only(top: 50)),
+                  const Center(
+                    child: Image(
+                      image: AssetImage('assets/chef.gif'),
+                      width: 170.0,
+                      height: 190.0,
+                    ),
                   ),
-                ),
-                Form(
-                  child: Theme(
-                    data: ThemeData(
-                        primaryColor: Colors.teal,
-                        inputDecorationTheme: const InputDecorationTheme(
-                            labelStyle:
-                            TextStyle(color: Colors.teal, fontSize: 15.0))),
-                    child: Container(
-                      padding: const EdgeInsets.all((40.0)),
-                      child: Column(
-                        children: [
-                          TextField(
-                            controller: dice,
-                            decoration: const InputDecoration(
-                                labelText: 'Enter "dice"'),
-                            keyboardType: TextInputType.emailAddress,
-                          ),
-                          TextField(
-                            controller: pw,
-                            decoration: const InputDecoration(
-                                labelText: 'Enter Password'),
-                            keyboardType: TextInputType.text,
-                            obscureText: true,
-                          ),
-                          const SizedBox(
-                            height: 40.0,
-                          ),
-                          ButtonTheme(
-                            minWidth: 100.0,
-                            height: 50.0,
-                            child: ElevatedButton(
-                              onPressed: () {
-                                if (dice.text == 'dice' && pw.text == '1234') {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (BuildContext context) =>
-                                              Dice()));
-                                } else
-                                if (dice.text == 'dice' && pw.text != '1234') {
-                                  showSnackBar2(context);
-                                } else
-                                if (dice.text != 'dice' && pw.text == '1234') {
-                                  showSnackBar3(context);
-                                } else {
-                                  showSnackBar(context);
-                                }
-                              },
-                              style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all(
-                                      Colors.orangeAccent)),
-                              child: const Icon(
-                                Icons.arrow_forward,
-                                color: Colors.white,
-                                size: 35.0,
-                                ),),),
-                        ],
-                      ),
-                  ),),),
-              ],
-            )
-            ,
+                  Form(
+                    child: Theme(
+                      data: ThemeData(
+                          primaryColor: Colors.teal,
+                          inputDecorationTheme: const InputDecorationTheme(
+                              labelStyle:
+                              TextStyle(color: Colors.teal, fontSize: 15.0))),
+                      child: Container(
+                        padding: const EdgeInsets.all((40.0)),
+                        child: Column(
+                          children: [
+                            TextField(
+                              controller: dice,
+                              decoration: const InputDecoration(
+                                  labelText: 'Enter "dice"'),
+                              keyboardType: TextInputType.emailAddress,
+                            ),
+                            TextField(
+                              controller: pw,
+                              decoration: const InputDecoration(
+                                  labelText: 'Enter Password'),
+                              keyboardType: TextInputType.text,
+                              obscureText: true,
+                            ),
+                            const SizedBox(
+                              height: 40.0,
+                            ),
+                            ButtonTheme(
+                              minWidth: 100.0,
+                              height: 50.0,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  if (dice.text == 'dice' && pw.text == '1234') {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (BuildContext context) =>
+                                                Dice()));
+                                  } else
+                                  if (dice.text == 'dice' && pw.text != '1234') {
+                                    showSnackBar2(context);
+                                  } else
+                                  if (dice.text != 'dice' && pw.text == '1234') {
+                                    showSnackBar3(context);
+                                  } else {
+                                    showSnackBar(context);
+                                  }
+                                },
+                                style: ButtonStyle(
+                                    backgroundColor: MaterialStateProperty.all(
+                                        Colors.orangeAccent)),
+                                child: const Icon(
+                                  Icons.arrow_forward,
+                                  color: Colors.white,
+                                  size: 35.0,
+                                  ),),),
+                          ],
+                        ),
+                    ),),),
+                ],
+              )
+              ,
+            ),
           );
         },
 
