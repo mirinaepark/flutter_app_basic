@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dice.dart';
+import 'counter.dart';
 
 void main() => runApp(MyApp());
 
@@ -30,10 +31,28 @@ class _LogInState extends State<LogIn> {
         title: Text('Log in'),
         backgroundColor: Colors.redAccent,
         centerTitle: true,
-        leading: IconButton(icon: const Icon(Icons.menu), onPressed: () {}),
         actions: <Widget>[
           IconButton(icon: const Icon(Icons.search), onPressed: () {})
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text('박미리내'), accountEmail: Text('mrn6341@naver.com')
+              ,decoration: BoxDecoration(
+              color: Colors.red[200],
+              borderRadius: BorderRadius.only(bottomRight: Radius.circular(40.0), bottomLeft: Radius.circular(40.0)),
+            ),),
+            ListTile(
+              leading: Icon(Icons.add, color: Colors.grey[850],),
+              title: Text('숫자놀이'),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Counter()));
+              },
+            ),
+          ],
+        ),
       ),
       body: Builder(
         builder: (context) {
