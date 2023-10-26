@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dice.dart';
 import 'counter.dart';
+import 'layout.dart';
 
 void main() => runApp(MyApp());
 
@@ -49,6 +50,13 @@ class _LogInState extends State<LogIn> {
               title: Text('숫자놀이'),
               onTap: (){
                 Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Counter()));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.add, color: Colors.grey[850],),
+              title: Text('예시'),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => ExApp()));
               },
             ),
           ],
