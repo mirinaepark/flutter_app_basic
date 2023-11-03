@@ -1,16 +1,16 @@
-# flutter_app_basic
 
-A new Flutter project.
+### Drawer
+1. ListView로 목차를 나열했다.
+2. borderRadius로 밑단만 둥글게 해주었다.
+   
+<image src='https://github.com/mirinaepark/flutter_app_basic/assets/90672466/c719aad8-dd40-499c-a827-5ab2f248bd3c' width=300></image>
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+### FloatingActionButton
+1. Stateful Widget으로 버튼 클릭 시 숫자가 증감되도록 하였다.
+   
+<image src='https://github.com/mirinaepark/flutter_app_basic/assets/90672466/8d907cc6-4a7a-4d7d-bf30-36026b14ba80' width=300></image>
 
-A few resources to get you started if this is your first Flutter project:
+### 로그인
+<image src='https://github.com/mirinaepark/flutter_app_basic/assets/90672466/b4d5393d-4b0d-4d1d-b551-bd2ae0478874' width=300></image>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
